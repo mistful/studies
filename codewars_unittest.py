@@ -18,5 +18,7 @@ class TestMethods(unittest.TestCase):
     def test_series_sum_five(self):
         self.assertEqual('1.57', codewars.series_sum(5))
 
+
+
 if __name__ == '__main__':
     unittest.main()
