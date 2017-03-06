@@ -1,16 +1,17 @@
-import csv
+# n = int(input())
+# for i in range(0, n):
+#     games.add(input().split(';'))
 
-with open('dataset_3363_4.txt', 'r') as inputFile:
-    reader = csv.reader(inputFile, delimiter=';')
+with open('games.txt') as g:
+    games = g.readlines()
 
-    students = [line for line in reader]
-    totalPoints = [[int(point) for point in points[1:]] for points in students]
+games = [game.strip() for game in games]
+teams = {}
 
-    averages = '\n'.join([str(sum(point) / 3) for point in totalPoints])
+for game in games:
+    res = game.split(';')
+    teams[res[0]] = teams.get(res[0], {})
 
-    print(averages)
 
-    totals = [[sum(point) for point in points] for points in totalPoints]
 
-    print(totals)
-
+print(teams)
