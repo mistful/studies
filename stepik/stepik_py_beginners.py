@@ -1,13 +1,10 @@
-import collections
+res = [input().split(' ') for x in range(int(input()))]
 
-with open('dataset_3380_5.txt') as data:
-    classes = [line.strip().split('\t') for line in data.readlines()]
+print(res)
 
-result = {k: [] for k in range(1, 12)}
+ns = {'global': None}
 
-for cl in classes:
-    result[int(cl[0])].append(int(cl[2]))
+for x in range(int(input())):
+    command = input().split(' ')
+    if(command[0] == 'add')
 
-result = '\n'.join([str(k) + ' ' + val for k, val in {k: str(sum(val) / len(val)) if len(val) else '-' for k, val in result.items()}.items()])
-
-print(result)
